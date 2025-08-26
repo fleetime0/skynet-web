@@ -1,0 +1,10 @@
+services:
+  skynet-web-ctrl:
+    image: skynet-web
+    container_name: skynet-web-ctrl
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      STREAM_URL: "http://192.168.3.2:8000/"
+      ROS_BRIDGE_URL: "ws://192.168.3.2:9090/"
